@@ -1,0 +1,404 @@
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Estilos globales */
+body {
+    background-image: url(/Icon/sabías-que-lotería-mexicana.png);
+    background-size: 50%; /* O usa 'cover' o un tamaño específico */
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Header */
+header {
+    display: flex;  /* Utiliza Flexbox para el diseño del header */
+    justify-content: space-between;  /* Coloca los elementos a ambos lados */
+    align-items: center;  /* Centra los elementos verticalmente */
+    padding: 15px 30px;  /* Añade relleno alrededor del contenido */
+    background-color: black;  /* Establece un color de fondo oscuro */
+    color: white;  /* Define el color del texto como blanco */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Añade sombra sutil */
+    position: relative;  /* Hace que el header tenga un posicionamiento relativo */
+    z-index: 10;  /* Asegura que el header esté por encima de otros elementos */
+}
+
+/* Logo */
+.logo img {
+    max-width: 100%;  /* Hace que el logo no exceda el 100% de su contenedor */
+    height: auto;  /* Mantiene la proporción del logo */
+}
+
+/* Menú y botones */
+nav {
+    display: flex;  /* Utiliza Flexbox para la navegación */
+    align-items: center;  /* Centra verticalmente los elementos */
+}
+
+/* Menú de navegación - Versión de escritorio */
+.menu {
+    margin-top: 15px;
+    list-style: none;  /* Elimina los puntos de lista */
+    display: flex;  /* Utiliza Flexbox para distribuir los elementos horizontalmente */
+    margin-left: 40px;  /* Añade margen a la izquierda */
+    transition: opacity 0.3s ease, transform 0.3s ease;  /* Añade transición a la opacidad y transformación */
+}
+
+.menu li {
+    margin-right: 25px;  /* Añade espacio entre los elementos del menú */
+}
+
+.menu li a {
+    color: rgb(255, 255, 255);  /* Establece el color del texto en blanco */
+    text-decoration: none;  /* Elimina el subrayado de los enlaces */
+    font-size: 16px;  /* Establece el tamaño de la fuente */
+    font-weight: 600;  /* Define el peso de la fuente */
+    position: relative;  /* Posicionamiento relativo para los enlaces */
+    transition: color 0.3s ease;  /* Añade una transición al color del texto */
+}
+
+.menu li a:hover {
+    color: #FF66B2;  /* Cambia el color del texto cuando el usuario pasa el ratón sobre el enlace */
+}
+
+/* Estilos para los botones de sesión */
+.auth-buttons {
+    display: none;  /* Los botones de sesión están ocultos por defecto */
+    flex-direction: column;  /* Organiza los botones verticalmente */
+    align-items: center;  /* Centra los botones */
+    gap: 22px;  /* Espacio entre los botones */
+    position: absolute;  /* Posiciona los botones de manera absoluta */
+    top: 100%;  /* Coloca los botones debajo del contenedor */
+    left: 89%;  /* Ajusta la posición horizontal */
+    width: 11%;  /* Define el ancho de los botones */
+    background-color: white;  /* Establece un fondo blanco */
+    padding: 10px;  /* Añade relleno alrededor de los botones */
+    border-radius: 10px;  /* Redondea las esquinas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Añade sombra a los botones */
+    z-index: 1;  /* Asegura que los botones estén por encima de otros elementos */
+}
+
+.auth-buttons button {
+    background-color: #FF66B2;  /* Establece un fondo rosa para los botones */
+    color: white;  /* Define el color del texto de los botones */
+    border: none;  /* Elimina el borde */
+    padding: 10px 18px;  /* Añade relleno interno a los botones */
+    border-radius: 30px;  /* Hace que los botones tengan bordes redondeados */
+    cursor: pointer;  /* Cambia el cursor cuando se pasa sobre el botón */
+    font-weight: 600;  /* Define un peso de fuente más grueso */
+    transition: background-color 0.3s ease, transform 0.2s ease;  /* Añade transiciones para el color de fondo y la transformación */
+}
+
+.auth-buttons button:hover {
+    background-color: #73cc13;  /* Cambia el color de fondo a verde al pasar el ratón */
+    transform: scale(1.05);  /* Aumenta ligeramente el tamaño del botón */
+}
+
+/* Clase 'show' que hace visibles los botones de autenticación */
+.auth-buttons.show {
+    display: flex !important;  /* Muestra los botones de sesión cuando tienen la clase 'show' */
+}
+
+/* Icono de usuario */
+.user-icon {
+    font-size: 28px;  /* Establece el tamaño del icono */
+    cursor: pointer;  /* Cambia el cursor al pasar sobre el icono */
+    margin-left: 20px;  /* Añade margen a la izquierda */
+    z-index: 2;  /* Asegura que el icono esté por encima de otros elementos */
+    margin-top: 1px;
+}
+
+/* Icono de hamburguesa */
+.menu-icon {
+    display: none;  /* Oculta el icono de hamburguesa por defecto */
+    font-size: 30px;  /* Establece el tamaño del icono */
+    cursor: pointer;  /* Cambia el cursor cuando se pasa sobre el icono */
+    z-index: 2;  /* Asegura que el icono esté por encima de otros elementos */
+    background: none;  /* Elimina el fondo del icono */
+    border: none;  /* Elimina el borde */
+    color: white;  /* Establece el color blanco */
+    font-size: 30px;  /* Ajusta el tamaño del icono */
+}
+
+/* Estilos para móviles */
+@media (max-width: 768px) {
+    body {
+        background-image: url(/Icon/sabías-que-lotería-mexicana.png);
+        background-size: 100%; /* O usa 'cover' o un tamaño específico */
+        color: #333;
+        line-height: 1.6;
+        font-size: 16px;
+        margin: 0;
+    }
+    .boton-practica button {
+        margin-bottom: 25px;
+    }
+    /* Menú oculto inicialmente */
+    .menu {
+        display: none;  /* Oculta el menú en pantallas pequeñas */
+        position: absolute;  /* Posiciona el menú de forma absoluta */
+        top: 80%;  /* Coloca el menú debajo del contenedor */
+        left: 0;  /* Alinea el menú a la izquierda */
+        background-color: #333;  /* Establece un fondo oscuro */
+        width: 100%;  /* Hace que el menú ocupe todo el ancho */
+        flex-direction: column;  /* Organiza los elementos del menú verticalmente */
+        padding: 20px;  /* Añade relleno al menú */
+        border-radius: 10px;  /* Redondea las esquinas */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);  /* Añade sombra */
+        opacity: 0;  /* Hace el menú invisible */
+        transform: translateY(-30px);  /* Mueve el menú hacia arriba */
+        pointer-events: none;  /* Desactiva la interacción con el menú */
+        z-index: 5;  /* Asegura que el menú esté por encima de otros elementos */
+    }
+
+    .menu.active {
+        display: flex;  /* Muestra el menú cuando tiene la clase 'active' */
+        opacity: 1;  /* Hace el menú visible */
+        transform: translateY(0);  /* Mueve el menú a su posición normal */
+        pointer-events: all;  /* Permite interactuar con el menú */
+    }
+
+    /* Mostrar el icono de hamburguesa */
+    .menu-icon {
+        display: block;  /* Muestra el icono de hamburguesa */
+    }
+
+    /* Ajustes a los botones de sesión */
+    .auth-buttons {
+        display: none;  /* Oculta los botones de sesión */
+        position: absolute;  /* Posiciona los botones de forma absoluta */
+        top: 100%;  /* Coloca los botones debajo del contenedor */
+        left: 50%;  /* Centra los botones horizontalmente */
+        width: 50%;  /* Ajusta el ancho de los botones */
+        flex-direction: column;  /* Organiza los botones verticalmente */
+        padding: 13px;  /* Añade relleno */
+        background-color: #fff;  /* Establece el fondo blanco */
+        border-radius: 10px;  /* Redondea las esquinas */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);  /* Añade sombra */
+        z-index: 5;  /* Asegura que los botones estén por encima de otros elementos */
+    }
+
+    .auth-buttons.show {
+        display: flex;  /* Muestra los botones cuando tienen la clase 'show' */
+    }
+
+    .user-icon {
+        font-size: 25px;  /* Establece el tamaño del icono */
+        cursor: pointer;  /* Cambia el cursor al pasar sobre el icono */
+        margin-left: 20px;  /* Añade margen a la izquierda */
+        z-index: 2;  /* Asegura que el icono esté por encima de otros elementos */
+        margin-top: 1px;
+    }
+}
+
+/* Enlaces */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Footer */
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    margin-top: 50px;
+}
+
+.contenedor-principal{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 15px;
+    font-size: 14px;
+}
+
+.contactanos{
+    text-align: center;
+    flex: 1;
+}
+
+.seccionContacto{
+    text-align: center;
+}
+
+.empresa, .correo, .direccion{
+    font-style: normal;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
+/* Estilos para la sección de Juego */
+.juego {
+    padding: 80px 0;
+    background-color: #eef2f7;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+.juego h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #3F51B5;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.juego p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #555;
+    text-align: justify;
+}
+
+.game-features h4 {
+    font-size: 1.4rem;
+    color: #3F51B5;
+    margin-top: 20px;
+}
+
+.game-features ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.game-features ul li {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    line-height: 1.5;
+}
+
+.game-features ul li strong {
+    color: #3F51B5;
+    margin-right: 10px;
+    font-weight: 600;
+}
+
+.boton-jugar button {
+    background-color: #3F51B5;
+    color: white;
+    font-size: 1.3rem;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.boton-jugar button:hover {
+    background-color: #2c387e;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.juego-imagen {
+    text-align: center;
+}
+
+.juego-imagen img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Sección de Reglas */
+.reglas-juego {
+    margin-top: 60px;
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.reglas-juego h3 {
+    font-size: 2rem;
+    color: #3F51B5;
+    margin-bottom: 20px;
+}
+
+.reglas-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.regla {
+    flex: 1 1 45%;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.regla h5 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.regla p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Sección de Testimonios */
+.testimonios {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.testimonios h3 {
+    font-size: 2rem;
+    color: #3F51B5;
+    margin-bottom: 40px;
+}
+
+.testimonios-slider {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.testimonio {
+    background-color: #f5f5f5;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.testimonio p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
